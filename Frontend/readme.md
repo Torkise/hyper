@@ -18,9 +18,6 @@ As usual, the first things to do are:
     
     to automatically open your project in a new tab of your browser.
 
-
-
-
 ## Configuration
 To make the project work on GH-Pages there are a few steps to do:
 - install gh-pages
@@ -72,7 +69,7 @@ The project contains:
   - TheFooter
   - TheHeader
 - 1 layout: default
-- 1 error page
+- 1 error page (currently it's not displayed properly when the project is generated)
 - 7 pages reachable at:
   - /
   - /contact
