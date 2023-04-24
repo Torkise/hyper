@@ -1,0 +1,19 @@
+{
+  "name": "t03---backend-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is the repo for the webpage that was developed during the lecture on 23/03/2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "lorem-ipsum": "^2.0.8",
+    "sequelize": "^6.29.3",
+    "sqlite3": "^5.1.6"
+  }
+}
