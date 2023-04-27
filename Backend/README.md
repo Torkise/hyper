@@ -16,4 +16,6 @@ This will start the server. The server listen on port 3001 and the following end
   - /dogs - Returns all the dogs 
   - /dogs/:id - Returns information about one dog specified by ID
   - /locations - Returns all the locations
-  - /locations/:id - Returns information about one location specified 
+  - /locations/:id - Returns information about one location specified
+
+Additionally, the CORS policy is already set up to accept requests from origin "http://localhost:3000".

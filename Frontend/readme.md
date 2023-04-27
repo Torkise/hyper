@@ -38,18 +38,36 @@ To make the project work on GH-Pages there are a few steps to do:
         baseURL: "/<name of the repo>"
       }
 
+## Local Serve
+To help in testing the project, some additional script have been added to the package.json file.
+
+If you want to test the project locally you can use the added command:
+
+      npm run generate-local
+
+This set the DEV environmnet variable. This is used in the nuxt.config.ts file to fix an issue with the local serving of the project. This is the new app field:
+
+      app: {
+        // Checking environment variable to decide root
+        baseURL: process.env.DEV? '' : '/Name-of-Repo'
+      }
+
+When the project is ready, you can use:
+
+      npx serve dist
+
+The command
+
+      npm run dev
+
+works properly even if the DEV environment variable hasn't been set.
+  
 ## Deployment
 - When you want to generate the project for deployment use:
   
       npm run generate
 
-- If you want to test the project locally you can use:
-
-      npx serve dist
-  
-  (The baseURL in the nuxt.config.ts file might not make this work properly. In this case you just have to comment the baseURL property)
-
-- When you want to deploy the generated project, use:
+- Then, to push the generated project, use:
 
       npm run deploy
 

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         }
     },
     app: {
-        baseURL: '/Test-pages'  // Name of your GitHub Repository
+        // Checking environment variable to decide whether the link 
+        baseURL: process.env.DEV? '' : '/Name-of-Repo'  // Name of your GitHub Repository
     }
 })
