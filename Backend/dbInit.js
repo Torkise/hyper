@@ -93,7 +93,7 @@ export default async (models) => {
           shortDescription: 'E-commerce platform connecting consumers with eco-friendly and socially responsible brands.',
           longDescription: 'This project is focused on building an online marketplace for sustainable products, which would allow consumers to easily discover and purchase environmentally friendly and socially responsible goods. The platform would curate a selection of products from a variety of brands and vendors, and offer a range of features such as user reviews, product recommendations, and personalized shopping experiences. The project team would work with vendors to ensure that their products meet certain sustainability and ethical criteria, and would leverage data analytics and machine learning to improve the user experience over time.',
           supervisor: 1,
-        //   areas: ['Sustainability', 'Energy'],
+          areas: "['Sustainability', 'Energy']",
           featured: true,
         },
         {
@@ -102,7 +102,7 @@ export default async (models) => {
             shortDescription: 'Innovative energy storage technology that enables large-scale adoption of renewable energy sources.',
             longDescription: 'This project is focused on developing innovative energy storage solutions that can help accelerate the adoption of renewable energy sources such as wind and solar power. The project team would work on designing and prototyping new energy storage technologies that are more efficient, reliable, and cost-effective than existing solutions. The team would also explore new business models and market opportunities for renewable energy storage, and work with partners and investors to bring their products to market.',
             supervisor: 2,
-            // areas: ['Energy'],
+            areas: "['Energy']",
             featured: true,
           },
         {
@@ -111,7 +111,7 @@ export default async (models) => {
           shortDescription: 'Artificial intelligence platform that provides personalized healthcare recommendations to individuals based on their genetic and health data.',
           longDescription: 'This project involves developing an AI-powered healthcare platform that uses a person’s genetic and health data to provide personalized recommendations for improving their health and wellness. The platform would analyze a person’s genetic data to identify potential health risks and recommend lifestyle changes or medical interventions to mitigate those risks. The project team would work with healthcare providers and researchers to ensure that the recommendations are evidence-based and up-to-date. The platform would also incorporate machine learning algorithms to improve its accuracy and effectiveness over time.',
           supervisor: 3,
-        //   areas: ['Healthcare', 'Technology'],
+          areas: "['Healthcare', 'Technology']",
           featured: true,
         },
         {
@@ -120,7 +120,7 @@ export default async (models) => {
             shortDescription: 'A solution that stores green energy for residential and commercial use',
             longDescription: 'This project aims to create a green energy storage solution that stores energy generated from renewable sources such as solar and wind power. The solution will be designed for both residential and commercial use and will help reduce reliance on non-renewable energy sources. The solution will be scalable and will have the potential to make a significant impact on reducing carbon emissions.',
             supervisor: 4,
-            // areas: ['Energy'],
+            areas: "['Energy']",
             featured: false,
           },
           {
@@ -129,7 +129,7 @@ export default async (models) => {
             shortDescription: 'A solution that optimizes supply chain management using AI',
             longDescription: 'This project aims to create an AI-enabled solution that optimizes supply chain management for businesses. The solution will use advanced algorithms and machine learning to predict demand, optimize inventory management, and reduce costs. The solution will be designed to be scalable and customizable, making it suitable for businesses of all sizes and industries.',
             supervisor: 5,
-            // areas: ['Technology'],
+            areas: "['Technology']",
             featured: false,
           },
           {
@@ -138,26 +138,28 @@ export default async (models) => {
             shortDescription: 'A home security system that uses smart technologies to enhance safety',
             longDescription: 'This project aims to create a smart home security system that uses advanced technologies such as sensors, cameras, and machine learning to enhance safety and security. The system will be designed to be user-friendly and accessible, and will offer a range of features such as remote monitoring, alarm systems, and automatic alerts. The system will be customizable and scalable, making it suitable for different types of homes and businesses.',
             supervisor: 2,
-            // areas: ['Technology'],
+            areas: "['Technology']",
             featured: false,
           },
     ]
 
     const areaModel = [
       {
-        id: "Artificial Inteligence",
-        description: "AI is transforming the way we live and work, and its potential applications are vast. AI technologies such as machine learning, natural language processing, and computer vision are already being used in a variety of industries, from healthcare to finance to retail. Companies working on developing or implementing AI-based solutions could be excellent investment opportunities." 
+        id: 1,
+        name: "Artificial Intelligence",
+        description: "AI is transforming the way we live and work, and its potential applications are vast. AI technologies such as machine learning, natural language processing, and computer vision are already being used in a variety of industries, from healthcare to finance to retail. Companies working on developing or implementing AI-based solutions could be excellent investment opportunities."
       },
       {
-        id: "Clean Energy",
+        id: 2,
+        name: "Energy",
         description: "As the world becomes increasingly aware of the impact of climate change, clean energy solutions are becoming more important. Investments in companies working on renewable energy sources such as solar, wind, or hydroelectric power could be attractive. Additionally, companies focused on energy storage or energy efficiency could also be good investments."
-      }, 
+      },
       {
-        id: "Healthcare",
+        id: 3,
+        name: "Healthcare",
         description: "The healthcare industry is ripe for innovation, and there are many areas where investment could make a significant impact. Companies focused on developing new drugs or medical devices, improving healthcare IT systems, or providing more accessible and affordable healthcare solutions could be promising investment opportunities."
       }
-    ]
-
+    ];
     // const location0 = await models.Location.create(locationModel[0])
     // const location1 = await models.Location.create(locationModel[1])
 

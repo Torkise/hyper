@@ -1,5 +1,5 @@
 import express from "express"
-import { DataTypes, Sequelize } from "sequelize"
+import { DataTypes, Sequelize } from 'sequelize'
 import cors from "cors"
 
 import { fileURLToPath } from "url"
@@ -16,12 +16,12 @@ const db = new Sequelize({
 })
 
 // This fixes the CORS error. This allows only request from the set origin to communicate with the server
-// const corsOptions = {
-//     origin: "http://localhost:3000" // The link of your project when run locally
-// }
+const corsOptions = {
+    origin: "http://localhost:5173" // The link of your project when run locally
+}
 const app = express()
 app.use(express.json())
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 async function initDB() {
     const models = {}
@@ -55,10 +55,14 @@ async function initDB() {
     
     models.Area = db.define('area', {
         id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false
         }, 
+        name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         description: {
             type: DataTypes.STRING,
             allowNull: true
