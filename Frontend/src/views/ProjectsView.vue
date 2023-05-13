@@ -30,7 +30,7 @@
             <h2>{{ project.title }}</h2>
             <p v-html="project.longDescription"></p>
             <br>
-            <img class="employee-img-popup" :src="findEmployeeById(employeeId).photo" v-for="employeeId in project.employeeIds" :key="employeeId">
+            <img class="employee-img-popup" :src="findEmployeeById(project.supervisor).photo">
           </div>
         </div>
       </div>
