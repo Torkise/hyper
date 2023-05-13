@@ -1,3 +1,5 @@
+<script src="../components/EmployeeInfo.js"></script>
+
 <template>
   <div class="meet-the-employees">
     <h1>Meet the experts</h1>
@@ -24,7 +26,6 @@
   </div>
 </template>
 
-<script src="../components/EmployeeInfo.js"></script>
 
 <style>
 .meet-the-employees {
