@@ -16,50 +16,94 @@ const db = new Sequelize({
 })
 
 // This fixes the CORS error. This allows only request from the set origin to communicate with the server
-const corsOptions = {
-    origin: "http://localhost:3000" // The link of your project when run locally
-}
+// const corsOptions = {
+//     origin: "http://localhost:3000" // The link of your project when run locally
+// }
 const app = express()
 app.use(express.json())
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 async function initDB() {
     const models = {}
 
     await db.authenticate()
 
-    models.Dog = db.define('dog', {
-        name: {
+    models.Employee = db.define('employee', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false
+        }, 
+        title: { 
             type: DataTypes.STRING,
             allowNull: false
-        },
-        breed: {
+        }, 
+        bio: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        age: {
-            type: DataTypes.NUMBER,
-            allowNull: false
+        photo: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
+        project: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER),
+            allowNull: true,
+            // Kan dnne være null? Skal det være en liste med prossjekter? 
+        }
+    })
+    
+    models.Area = db.define('area', {
+        id: {
+            type: DataTypes.STRING,
+            primaryKey: true,
+            allowNull: false
+        }, 
         description: {
             type: DataTypes.STRING,
             allowNull: true
         }
     })
-
-    models.Location = db.define('location', {
-        name: {
+    models.Project = db.define('project', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false
+        },
+        title: { 
+            type: DataTypes.STRING,
+            allowNull: false
+        }, 
+        shortDescription: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        city: {
+        longDescription: {
             type: DataTypes.STRING,
+            allowNull: true
+        },
+        supervisor: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        areas: {
+            type: DataTypes.STRING,
+            allowNull: true
+        }, 
+        featured: {
+            type: DataTypes.BOOLEAN,
             allowNull: false
         }
     })
 
-    models.Location.hasMany(models.Dog)
-    models.Dog.belongsTo(models.Location)
+
+
+    // models.Employee.hasMany(models.Project)
+    // models.Project.belongsTo(models.Employee)
+    // models.Project.belongsToMany(models.Area)
+    // models.Area.belongsToMany(models.Project)
+
+
 
     await db.sync({ force: true })
 
@@ -71,24 +115,21 @@ async function initDB() {
 async function initServer() {
     const models = await initDB()
 
-    app.get('/dogs', async (req, res) => {
-        const data = await models.Dog.findAll();
+    app.get('/', (req, res) => {
+        res.send("Welcome to our Api")
+    }) 
 
+    app.get('/employees', async(req, res) => {
+        const data = await models.Employee.findAll();
         res.status(200).json(data)
     })
 
-    app.get('/dogs/:id', async (req, res) => {
-        const data = await models.Dog.findOne({
+    app.get('/employees/:id', async(req, res) => {
+        const data = await models.Employee.findOne({
             where: {
                 id: req.params.id
-            },
-            include: [
-                {
-                    model: models.Location
-                }
-            ]
+            }
         })
-
         if (data) {
             res.status(200).json(data)
         }
@@ -97,24 +138,33 @@ async function initServer() {
         }
     })
 
-    app.get('/locations', async (req, res) => {
-        const data = await models.Location.findAll();
-
+    app.get('/projects', async(req, res) => {
+        const data = await models.Project.findAll();
         res.status(200).json(data)
     })
 
-    app.get('/locations/:id', async (req, res) => {
-        const data = await models.Location.findOne({
-            where: {
-                id: req.params.id
-            },
-            include: [
-                {
-                    model: models.Dog
-                }
-            ]
-        })
+    app.get('/areas', async(req, res) => {
+        const data = await models.Area.findAll();
+        res.status(200).json(data)
+    })
 
+    app.get('/areasId', async(req, res) => { 
+        const data = await models.Area.findAll(); 
+        const result = {}
+        let counter = 0 
+        data.forEach(item => {
+            result[counter] = item.id;
+            counter = counter + 1; 
+        });
+        res.status(200).json(result)
+    })
+
+    app.get('/areas/:id', async(req, res) => {
+        const data = await models.Area.findOne({
+            where: {
+                id: req.params.id 
+            }
+        })
         if (data) {
             res.status(200).json(data)
         }
@@ -122,6 +172,58 @@ async function initServer() {
             res.sendStatus(404)
         }
     })
+
+    // app.get('/dogs', async (req, res) => {
+    //     const data = await models.Dog.findAll();
+
+    //     res.status(200).json(data)
+    // })
+
+    // app.get('/dogs/:id', async (req, res) => {
+    //     const data = await models.Dog.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //         include: [
+    //             {
+    //                 model: models.Location
+    //             }
+    //         ]
+    //     })
+
+    //     if (data) {
+    //         res.status(200).json(data)
+    //     }
+    //     else {
+    //         res.sendStatus(404)
+    //     }
+    // })
+
+    // app.get('/locations', async (req, res) => {
+    //     const data = await models.Location.findAll();
+
+    //     res.status(200).json(data)
+    // })
+
+    // app.get('/locations/:id', async (req, res) => {
+    //     const data = await models.Location.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //         include: [
+    //             {
+    //                 model: models.Dog
+    //             }
+    //         ]
+    //     })
+
+    //     if (data) {
+    //         res.status(200).json(data)
+    //     }
+    //     else {
+    //         res.sendStatus(404)
+    //     }
+    // })
 
     // Using a different port
     app.listen(3001, () => {
