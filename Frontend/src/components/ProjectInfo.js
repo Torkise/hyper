@@ -50,7 +50,7 @@ export default {
           .then((response) => response.json())
           .then((data) => {
             this.projects = data;
-            this.projects.forEach(project => project.areas = parseArray(project.areas))
+            this.projects.forEach(project => project.areas = this.parseArray(project.areas))
             console.log(this.projects)
           })
           .catch((error) => {
@@ -73,6 +73,7 @@ export default {
           throw new Error('Invalid input format');
         }
       },
+
         showPopup(element) {
             element.showPopup = true;
         },
