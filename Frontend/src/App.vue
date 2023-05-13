@@ -55,7 +55,7 @@ main {
 
 footer {
   background-color: #f2f2f2;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
   font-size: 14px;
   z-index: 998;
@@ -74,7 +74,8 @@ footer {
   left: 0;
   width: 100%;
   height: 125px;
-  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.8));
+  /* background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.8)); */
+  background: rgb(255, 255, 255);
   padding: 1rem;
   z-index: 999;
 }

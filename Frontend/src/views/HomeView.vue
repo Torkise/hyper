@@ -1,9 +1,25 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter(); 
+const goToPage = (page) => {
+  router.push(page);
+}
+</script>
 <template>
-  <div class="home">
+  <div class="image-container">
+    <img src="https://www.networkrail.co.uk/wp-content/uploads/2021/04/research-and-development-portfolio-header.jpg" alt="Homepage Photo">
+    <div class="banner">
+      <h1>Investing in tomorrow's innovations today</h1>
+    </div>  
+  </div>
+  
+  <!-- <div class="home">
     <h1>Welcome to Venture Capital</h1>
     <p>We provide funding and support to innovative startups.</p>
-    <h3>Check out our most exciting projects</h3>
-    <div class="project-list">
+    <h3>Check out our most exciting projects</h3> -->
+
+
+    <!-- <div class="project-list">
       <div v-for="project in featuredProjects" :key="project.id">
         <div class="project">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
@@ -26,8 +42,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <router-link to="/projects">Explore More Projects In Our Portfolio</router-link>
+    </div> -->
+    <!-- <router-link to="/projects">Explore More Projects In Our Portfolio</router-link>
     <h3>Here at [Venture Captial] we are proud of our dedicated employees</h3>
     <router-link to="/employees">Check Out Our Wonderfull Employees</router-link>
     <br>
@@ -41,18 +57,94 @@
       <li>Access to our network of investors and partners</li>
     </ul>
     <router-link to="/services" class="btn btn-tertiary">Learn More About Our Services</router-link>
+  </div> -->
+  <div class="home">
+    <h1>Welcome to Venture Capital</h1>
+    <p>We provide funding and support to innovative startups.</p>
+  </div>
+  <div class="section">
+    <div class="image-wrapper">
+      <img src="https://imageio.forbes.com/specials-images/imageserve/60cf26d139bf3c0abaef3cdc/Multiracial-business-group-in-office/960x0.jpg?format=jpg&width=960" alt="Employees Photo">
+    </div>
+    <div class="content">
+      <p>At Genesis Capital we...</p>
+      <button @click="goToPage('/employees')">Learn More</button>
+    </div>
+  </div>
+  <div class="home">
+    <p>Can add more info here.</p>
+  </div>
+  <div class="section">
+    <div class="content">
+      <p>If you're an entrepreneur with a groundbreaking idea...</p>
+      <button @click="goToPage('/projects')">Learn More</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="https://thumbs.dreamstime.com/b/technology-logo-tech-firm-logo-vector-design-full-vector-template-technology-logo-tech-firm-logo-vector-design-full-vector-109273835.jpg" alt="Employees Photo">
+    </div>
+  </div> 
+  <div class="home">
   </div>
 </template>
 
-<script src="../components/ProjectInfo_temp.js"></script>
+<!-- <script src="../components/ProjectInfo_temp.js"></script> -->
 
 <style>
   .home {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     padding: 8rem;
   }
+
+  .image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Maintain a 16:9 aspect ratio (change this value as needed) */
+    position: relative;
+  }
+  .banner {
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    width: 40%;
+    background-color: rgba(31, 31, 31, 0.5);
+    padding: 3rem;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    background-color:  #f2f2f2;
+    padding: 3rem;
+    color: #000000;
+  }
+
+  .image-wrapper {
+    flex: 0 0 50%;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    /* max-height: 300px; */
+    border-radius: 50px;
+  }
+
+  .content {
+    flex: 0 0 50%;
+    padding: 4rem;
+  }
+
   .projects {
     min-height: 100vh;
     display: flex;
@@ -71,6 +163,20 @@
     max-width: 30rem;
     padding: 2rem;
     border: 1px solid #ddd;
+  }
+
+  .section button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    background-color: hsla(160, 100%, 37%, 1); /* Green color */
+    color: #000000;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .section button:hover {
+    background-color: rgb(0, 141, 94); /* Darker green color on hover */
   }
 
   .project-popup-content h2 {
