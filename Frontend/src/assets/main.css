@@ -33,6 +33,9 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   } */
+  /* .page-text {
+    font-size: small;
+  } */
 }
 
 .page-title::after {
@@ -43,4 +46,6 @@ a,
   width: 100%;
   height: 1.5px;
   background-color: #FF7A00;
+  /* font-size: medium; */
 }
+

@@ -2,10 +2,8 @@
 
 <template>
   <div class="meet-the-employees">
-
-    <h1 class="employee-heading-text">Meet the experts</h1>
-    <p class="employee-text">Our company is proud to have a team of highly skilled and experienced professionals. Each of our employees brings unique expertise and perspectives to the table, allowing us to provide the best possible service to our clients. Get to know our team members below:</p>
-
+    <h1 class="page-title">Meet the experts</h1>
+    <p class="page-text">Our company is proud to have a team of highly skilled and experienced professionals. Each of our employees brings unique expertise and perspectives to the table, allowing us to provide the best possible service to our clients. Get to know our team members below:</p>
     <div class="employees-list">
       <div v-for="(employee, index) in employees" :key="index">
         <div class="employee-card" @click="showPopup(employee)">
@@ -32,12 +30,7 @@
 <style>
 
 @media screen and (max-width: 1000px) {
-  .employee-heading-text {
-    font-size: medium;
-  }
-  .employee-text {
-    font-size: small;
-  }
+
   .meet-the-employees {
     width: 80vb;
     flex-direction: row;

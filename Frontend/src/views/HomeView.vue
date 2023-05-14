@@ -60,14 +60,15 @@ const goToPage = (page: RouteLocationRaw) => {
   </div> -->
   <div class="home">
     <h1>Welcome to Genesis Capital</h1>
-    <p>We provide funding and support to innovative startups.</p>
+    <p>Welcome to Venture Capital, where we are passionate about supporting visionary entrepreneurs with game-changing ideas. Our mission is to help turn your bold ideas into successful businesses by providing the capital, resources, and expertise you need to grow.
+</p>
   </div>
   <div class="section">
     <div class="image-wrapper">
       <img src="https://imageio.forbes.com/specials-images/imageserve/60cf26d139bf3c0abaef3cdc/Multiracial-business-group-in-office/960x0.jpg?format=jpg&width=960" alt="Employees Photo">
     </div>
     <div class="content">
-      <p>At Genesis Capital we...</p>
+      <p>At Venture Capital, we specialize in identifying and investing in early-stage startups with the potential for significant growth. Our experienced team of investors has a proven track record of success and is committed to helping you achieve your goals.</p>
       <button @click="goToPage('/employees')">Learn More</button>
     </div>
   </div>
@@ -76,7 +77,7 @@ const goToPage = (page: RouteLocationRaw) => {
   </div>
   <div class="section">
     <div class="content">
-      <p>If you're an entrepreneur with a groundbreaking idea...</p>
+      <p>If you're an entrepreneur with a groundbreaking idea, we invite you to learn more about how we can support you on your journey. We're always on the lookout for the next big thing, and we're proud to partner with some of the industry's most innovative and visionary entrepreneurs.</p>
       <button @click="goToPage('/projects')">Learn More</button>
     </div>
     <div class="image-wrapper">
