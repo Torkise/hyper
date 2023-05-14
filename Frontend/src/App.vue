@@ -15,6 +15,7 @@ const goToHomePage = () => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
+        <RouterLink to="/areas">Areas</RouterLink>
         <RouterLink to="/employees">Employees</RouterLink>
         <RouterLink to="/aboutus">About us</RouterLink>
         <RouterLink to="/contactus">Contact us</RouterLink>
@@ -28,7 +29,7 @@ const goToHomePage = () => {
     <RouterView />
   </main>
   <footer>
-    <p>&copy; 2023 Venture Capital. All rights reserved.</p>
+    <p>&copy; 2023 Genesis Capital. All rights reserved.</p>
   </footer>
 
 </template>

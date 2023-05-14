@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
-    <h1>A Look into Our Investments</h1>
-    <p>Welcome to the [Venture Capital] Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
+    <h1 class="page-title">A Look into Our Investments</h1>
+    <p>Welcome to Genesis Capital Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
     <br>
     <div>
       <label for="area-select">Filter by project area: </label>
@@ -13,13 +13,14 @@
     <br>
     <div class="project-list">
       <div v-for="project in filteredProjects" :key="project.id">
-        <div class="project">
+        <div class="project" @click="showPopup(project)">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
             {{ area }}
           </div>
           <h2>{{ project.title }}</h2>
           <p>{{ project.shortDescription }}</p>
-          <button @click="showPopup(project)">Learn More</button>
+          <!-- <button @click="showPopup(project)">Learn More</button> -->
+          <p class="learnmore">Learn more...</p>
         </div>
         <div v-if="project.showPopup" class="overlay" @click="hidePopup(project)"></div>
         <div v-if="project.showPopup" class="project-popup">
@@ -59,6 +60,14 @@
     max-width: 30rem;
     padding: 2rem;
     border: 1px solid #ddd;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 5px;
+  }
+
+  .project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
   }
 
   .project-popup-content h2 {
@@ -130,6 +139,12 @@
     background-color: #6e6e6e;
     color: #fff;
     cursor: pointer;
+  }
+
+  .learnmore {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    color: #979797;
   }
   
   .project button:hover {
