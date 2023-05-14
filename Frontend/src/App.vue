@@ -85,7 +85,7 @@ footer {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-  width: 15vh;
+  max-width: 100%;
   height: 15vh;
   /* margin: 0 auto 2rem; */
   cursor: pointer;
@@ -93,6 +93,7 @@ footer {
 
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   font-size: 12px;
   margin-top: 2rem;
@@ -116,7 +117,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -140,7 +141,28 @@ nav a:first-of-type {
     font-size: 1rem;
 
     padding: 1rem 0;
+    margin-top: 1rem; 
+   }
+}
+
+@media screen and (max-width: 1023px) {
+  header {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    height: 6vh;
+    margin-bottom: 0rem;
+  }
+
+  .not-home nav {
     margin-top: 1rem;
   }
+  
+  .nav {
+    font-size: 4px;
+  }
 }
+
 </style>
