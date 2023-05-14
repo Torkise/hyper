@@ -29,7 +29,7 @@
 
 <style>
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .employee-heading-text {
     font-size: medium;
   }
@@ -37,7 +37,12 @@
     font-size: small;
   }
   .meet-the-employees {
-    width: 60vh;
+    width: 80vb;
+    flex-direction: row;
+  }
+  .employee-card {
+    border-radius: 2px;
+    padding: 10px;
   }
 }
   
