@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 const router = useRouter(); 
-const goToPage = (page) => {
+const goToPage = (page: any) => {
   router.push(page);
 }
 </script>
@@ -110,7 +110,7 @@ const goToPage = (page) => {
     position: relative;
     top: 40vh;
     left: 0;
-    width: 50%;
+    width: 60%;
     background-color: rgba(31, 31, 31, 0.5);
     padding: 3rem;
     color: #fff;
@@ -144,7 +144,7 @@ const goToPage = (page) => {
     padding-top: 2rem; /* Add some padding to the top */
   }
   .banner {
-    width: 60%; /* Make the banner wider */
+    width: 80%; /* Make the banner wider */
     font-size: 20px; /* Decrease the font size */
   }
   }
@@ -165,8 +165,14 @@ const goToPage = (page) => {
   }
   .banner {
     font-size: 10px; /* Decrease the font size */
+    top: 10vh;
   }
 } 
+
+
+
+
+  
 
 
   .section {
