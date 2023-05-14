@@ -9,7 +9,7 @@ const goToPage = (page: RouteLocationRaw) => {
   <div class="image-container">
     <img src="https://www.networkrail.co.uk/wp-content/uploads/2021/04/research-and-development-portfolio-header.jpg" alt="Homepage Photo">
     <div class="banner">
-      <h1>Investing in tomorrow's innovations today</h1>
+      <h1 class="img-text">Investing in tomorrow's innovations today</h1>
     </div>  
   </div>
   
@@ -98,29 +98,82 @@ const goToPage = (page: RouteLocationRaw) => {
   }
 
   .image-container {
+    position: absolute;
+    top: 0; 
+    left: 0;
     width: 100%;
     height: 0;
     padding-bottom: 56.25%; /* Maintain a 16:9 aspect ratio (change this value as needed) */
     position: relative;
   }
   .banner {
-    position: absolute;
-    top: 30vh;
+    position: relative;
+    top: 40vh;
     left: 0;
-    width: 40%;
+    width: 60%;
     background-color: rgba(31, 31, 31, 0.5);
     padding: 3rem;
     color: #fff;
-    font-size: 24px;
+    font-size: 4vh;
+  }
+
+  .img-text {
+    position: relative;
+
+  }
+
+  .img-text img {
+    display: block;
+  width: 100%;
+  height: auto;
   }
 
   .image-container img {
     position: absolute;
+    top:0;
+    left: 0; 
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
+
+  @media screen and (max-width: 1024px) {
+    .image-container {
+    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
+    padding-top: 2rem; /* Add some padding to the top */
+  }
+  .banner {
+    width: 80%; /* Make the banner wider */
+    font-size: 20px; /* Decrease the font size */
+  }
+  }
+  @media screen and (max-width: 768px) {
+    .image-container {
+    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
+    padding-top: 2rem; /* Add some padding to the top */
+  }
+  .banner {
+    width: 100%; /* Make the banner wider */
+    font-size: 16px; /* Decrease the font size */
+  }
+}
+  @media screen and (max-width: 620px) {
+    .image-container {
+    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
+    padding-top: 2rem; /* Add some padding to the top */
+  }
+  .banner {
+    font-size: 10px; /* Decrease the font size */
+    top: 10vh;
+  }
+} 
+
+
+
+
+  
+
 
   .section {
     display: flex;
