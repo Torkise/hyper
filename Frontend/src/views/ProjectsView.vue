@@ -2,7 +2,6 @@
   <div class="projects">
     <h1 class="page-title">A Look into Our Investments</h1>
     <p>Welcome to Genesis Capital Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
-    <br>
     <div>
       <label for="area-select">Filter by project area: </label>
       <select id="area-select" v-model="selectedArea">
@@ -47,6 +46,7 @@
     display: flex;
     flex-direction: column;
     padding: 8rem;
+    grid-gap: 20px;
   }
   
   .project-list {
@@ -98,14 +98,14 @@
   }
 
   .project-area {
-  display: inline-block;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 1rem;
-  border-radius: 1rem 1rem 1rem 1rem;
-  color: #fff;
-  text-transform: capitalize;
-}
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    color: #fff;
+    text-transform: capitalize;
+  }
   
   .project-area.healthcare {
     background-color: #ffd388;

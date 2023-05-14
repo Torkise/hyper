@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     padding: 8rem;
+    grid-gap: 20px;
   }
   .social-media {
     display: flex;

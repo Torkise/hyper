@@ -44,6 +44,7 @@
     flex-direction: column;
     padding: 8rem;
     margin-left: 6rem;
+    grid-gap: 20px;
   }
 
   .area-section {
