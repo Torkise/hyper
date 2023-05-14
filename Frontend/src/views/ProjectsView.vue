@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
-    <h1>A Look into Our Investments</h1>
-    <p>Welcome to the [Venture Capital] Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
+    <h1 class="page-title">A Look into Our Investments</h1>
+    <p>Welcome to Genesis Capital Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
     <br>
     <div>
       <label for="area-select">Filter by project area: </label>

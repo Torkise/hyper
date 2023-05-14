@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, type RouteLocationRaw } from 'vue-router'
 const router = useRouter(); 
-const goToPage = (page) => {
+const goToPage = (page: RouteLocationRaw) => {
   router.push(page);
 }
 </script>
@@ -59,7 +59,7 @@ const goToPage = (page) => {
     <router-link to="/services" class="btn btn-tertiary">Learn More About Our Services</router-link>
   </div> -->
   <div class="home">
-    <h1>Welcome to Venture Capital</h1>
+    <h1>Welcome to Genesis Capital</h1>
     <p>We provide funding and support to innovative startups.</p>
   </div>
   <div class="section">

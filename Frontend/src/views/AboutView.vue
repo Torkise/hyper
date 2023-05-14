@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1>About Us</h1>
-    <p>Welcome to Venture Capital, the leading firm in investment and startup funding. Our mission is to help entrepreneurs build successful businesses by providing them with the capital, resources, and expertise they need to succeed.</p>
+    <h1 class="page-title">About Us</h1>
+    <p>Welcome to Genesis Capital, the leading firm in investment and startup funding. Our mission is to help entrepreneurs build successful businesses by providing them with the capital, resources, and expertise they need to succeed.</p>
 
   </div>
 </template>
