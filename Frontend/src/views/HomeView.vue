@@ -145,14 +145,28 @@ const goToPage = (page) => {
   }
   .banner {
     width: 60%; /* Make the banner wider */
+    font-size: 20px; /* Decrease the font size */
   }
   }
   @media screen and (max-width: 768px) {
+    .image-container {
+    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
+    padding-top: 2rem; /* Add some padding to the top */
+  }
   .banner {
     width: 100%; /* Make the banner wider */
+    font-size: 16px; /* Decrease the font size */
   }
 }
-
+  @media screen and (max-width: 620px) {
+    .image-container {
+    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
+    padding-top: 2rem; /* Add some padding to the top */
+  }
+  .banner {
+    font-size: 10px; /* Decrease the font size */
+  }
+} 
 
 
   .section {
