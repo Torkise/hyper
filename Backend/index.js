@@ -34,6 +34,10 @@ async function initDB() {
             primaryKey: true,
             allowNull: false
         }, 
+        name: { 
+            type: DataTypes.STRING,
+            allowNull: false
+        }, 
         title: { 
             type: DataTypes.STRING,
             allowNull: false
