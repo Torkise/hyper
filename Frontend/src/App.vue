@@ -37,6 +37,7 @@ const goToHomePage = () => {
 
 <style scoped>
 
+
 header {
   position: fixed;
   top: 0;
@@ -48,11 +49,6 @@ header {
   transition: all 0.3s ease;
 }
 
-main {
-  /* padding-top: 125px ; */
-  /* padding-bottom: 100px; */
-  width: 100vw;
-}
 
 footer {
   background-color: #f2f2f2;
@@ -149,6 +145,7 @@ nav a:first-of-type {
   header {
     height: auto;
     padding: 1rem 0;
+    max-width: 100%;
   }
 
   .logo {
@@ -164,5 +161,6 @@ nav a:first-of-type {
     font-size: 4px;
   }
 }
+
 
 </style>
