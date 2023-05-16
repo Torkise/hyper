@@ -72,12 +72,15 @@
   width: 100%;
   border-radius: 50%;
   margin-bottom: 10px;
+  max-width: 150px;
 }
 
 .employee-popup-img {
   display: block;
   margin: 0 auto;
   float: right;
+  max-width: 250px;
+  border-radius: 50%;
 }
 
 .employee-popup {

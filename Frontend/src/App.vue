@@ -2,8 +2,14 @@
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 const router = useRouter(); 
 const goToHomePage = () => {
+  window.scrollTo(0, 0)
   router.push("/")
 }
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
+
 </script>
 
 <template>
@@ -13,12 +19,12 @@ const goToHomePage = () => {
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/areas">Areas</RouterLink>
-        <RouterLink to="/employees">Employees</RouterLink>
-        <RouterLink to="/aboutus">About us</RouterLink>
-        <RouterLink to="/contactus">Contact us</RouterLink>
+        <RouterLink to="/" @click="scrollToTop">Home</RouterLink>
+        <RouterLink to="/projects" @click="scrollToTop">Projects</RouterLink>
+        <RouterLink to="/areas" @click="scrollToTop">Areas</RouterLink>
+        <RouterLink to="/employees" @click="scrollToTop">Employees</RouterLink>
+        <RouterLink to="/aboutus" @click="scrollToTop">About us</RouterLink>
+        <RouterLink to="/contactus" @click="scrollToTop">Contact us</RouterLink>
       </nav>
       <!-- <HelloWorld v-if="$route.path === '/'" msg="Welcome to Venture Capital" />  -->
 
