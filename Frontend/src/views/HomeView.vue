@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter, type RouteLocationRaw } from 'vue-router';
 import HomePageImage from '@/components/HomePageImage.vue';
-
+import DownArrow from '@/components/DownArrow.vue';
 
 const router = useRouter(); 
 const goToPage = (page: RouteLocationRaw) => {
@@ -71,7 +71,7 @@ const scrollDown = () => {
     <router-link to="/services" class="btn btn-tertiary">Learn More About Our Services</router-link>
   </div> -->
   <div class="find-more-banner">
-      <div @click="scrollDown">See More</div>
+      <div @click="scrollDown"><DownArrow></DownArrow></div>
   </div>
   <div id="home" class="home">
     <h1>Welcome to Genesis Capital</h1>

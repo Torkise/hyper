@@ -9,6 +9,15 @@
         <li><a href="#healthcare"><img src="../assets/icons/healthcare.svg"><span>Healthcare</span></a></li>
       </ul>
     </nav>
+    <nav class="menu-phone">
+      <ul>
+        <li><a href="#general"><img src="../assets/icons/general.svg"><span></span></a></li>
+        <li><a href="#energy"><img src="../assets/icons/energy.svg"><span></span></a></li>
+        <li><a href="#sustainability"><img src="../assets/icons/sustainability.svg"><span></span></a></li>
+        <li><a href="#technology"><img src="../assets/icons/technology.svg"><span></span></a></li>
+        <li><a href="#healthcare"><img src="../assets/icons/healthcare.svg"><span></span></a></li>
+      </ul>
+    </nav>
     <h1 class="page-title">Our Fields of Interest</h1>
     <section id="general" class="area-section">
       <!-- Content for Section 1 -->
@@ -59,6 +68,9 @@
     background-color: #f1f1f1;
     border-radius: 0 20px 20px 0;
   }
+  .menu-phone {
+    display: none;
+  }
 
   .menu ul {
     list-style: none;
@@ -86,5 +98,42 @@
 
   .menu span {
     margin-left: 0.5rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    .menu {
+      display: none;
+    }
+
+    .menu-phone {
+      display: block;
+      position: fixed;
+      left: 0;
+      padding-top: 2rem;
+      background-color: #f1f1f1;
+    }
+
+    .menu-phone ul {
+    list-style: none;
+    padding: 1rem;
+  }
+
+  .menu-phone li {
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+  }
+
+  .menu-phone a {
+    color: #000000;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+    
+    .areas {
+      margin-left: 4rem;
+      padding: 2rem;
+    }
   }
 </style>
