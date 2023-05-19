@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useRouter, type RouteLocationRaw } from 'vue-router'
+import { useRouter, type RouteLocationRaw } from 'vue-router';
+import HomePageImage from '@/components/HomePageImage.vue';
 
 
 const router = useRouter(); 
@@ -20,15 +21,10 @@ const scrollDown = () => {
   }
 }
 
+
 </script>
 <template>
-  <div class="image-container">
-    <img style="display: block;" src="https://www.networkrail.co.uk/wp-content/uploads/2021/04/research-and-development-portfolio-header.jpg" alt="Homepage Photo">
-       <div class="banner">
-      <h1 class="img-text">Investing in tomorrow's innovations today</h1>
-    </div>  
-  </div>
-  
+  <HomePageImage/>
   <!-- <div class="home">
     <h1>Welcome to Venture Capital</h1>
     <p>We provide funding and support to innovative startups.</p>
@@ -85,7 +81,7 @@ const scrollDown = () => {
   <div class="section">
     <div class="image-wrapper" >
       <img src="https://imageio.forbes.com/specials-images/imageserve/60cf26d139bf3c0abaef3cdc/Multiracial-business-group-in-office/960x0.jpg?format=jpg&width=960" alt="Employees Photo">
-    </div>
+       </div>
     <div class="content">
       <p>At Venture Capital, we specialize in identifying and investing in early-stage startups with the potential for significant growth. Our experienced team of investors has a proven track record of success and is committed to helping you achieve your goals.</p>
       <button @click="goToPage('/employees')">Learn More</button>
@@ -116,86 +112,15 @@ const scrollDown = () => {
     padding: 8rem;
   }
 
-
-  .image-container {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    padding-bottom: 56.25%;     /* Maintain a 16:9 aspect ratio (change this value as needed) */
-    position: relative;
-  }
-  .banner {
-    position: relative;
-    top: 40vh;
-    left: 0;
-    width: 60%;
-    background-color: rgba(31, 31, 31, 0.5);
-    padding: 3rem;
-    color: #fff;
-    font-size: 2.5vh;
-  }
-
-  .img-text {
-    position: relative;
-
-  }
-
-  .img-text img {
-    display: block;
-  width: 100%;
-  height: auto;
-  }
-
-  .image-container img {
-    position: absolute;
-    top:0;
-    left: 0; 
-    width: 100%;
-    height: 100%;
-    max-height: 90vh;
-    object-fit: cover;
-    object-position: center;
-  }
   .find-more-banner {
     position: sticky;
     background-color: rgba(31, 31, 31, 0.5);
     bottom: 0;
-    padding: 1rem;
+    padding: 0.1rem;
     color: #fff;
     text-align: center;
   }
 
-  @media screen and (max-width: 1024px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    width: 80%; /* Make the banner wider */
-    font-size: 20px; /* Decrease the font size */
-  }
-  }
-  @media screen and (max-width: 768px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    width: 100%; /* Make the banner wider */
-    font-size: 16px; /* Decrease the font size */
-  }
-}
-  @media screen and (max-width: 620px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    font-size: 10px; /* Decrease the font size */
-    top: 10vh;
-  }
-} 
 
   .section {
     display: flex;
