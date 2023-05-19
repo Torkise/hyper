@@ -2,8 +2,24 @@
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 const router = useRouter(); 
 const goToHomePage = () => {
+  scrollToTop()
   router.push("/")
 }
+
+const scrollToTop = (urlEnd: string) => {
+  const urlString = window.location.href
+  const url = new URL(urlString); // Create a URL object from the URL string
+  const pathSegments = url.pathname.split('/'); // Split the pathname into segments
+  const lastSegment = pathSegments[pathSegments.length - 1]; // Get the last segment of the URL
+  if (lastSegment === urlEnd) {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  }
+  else {
+    window.scrollTo(0, 0)
+  }
+
+}
+
 </script>
 
 <template>
@@ -13,12 +29,12 @@ const goToHomePage = () => {
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/areas">Areas</RouterLink>
-        <RouterLink to="/employees">Employees</RouterLink>
-        <RouterLink to="/aboutus">About us</RouterLink>
-        <RouterLink to="/contactus">Contact us</RouterLink>
+        <RouterLink to="/" @click="scrollToTop('')">Home</RouterLink>
+        <RouterLink to="/projects" @click="scrollToTop('projects')">Projects</RouterLink>
+        <RouterLink to="/areas" @click="scrollToTop('areas')">Areas</RouterLink>
+        <RouterLink to="/employees" @click="scrollToTop('employees')">Employees</RouterLink>
+        <RouterLink to="/aboutus" @click="scrollToTop('aboutus')">About us</RouterLink>
+        <RouterLink to="/contactus" @click="scrollToTop('contactus')">Contact us</RouterLink>
       </nav>
       <!-- <HelloWorld v-if="$route.path === '/'" msg="Welcome to Venture Capital" />  -->
 

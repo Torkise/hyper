@@ -1,18 +1,30 @@
 <script setup lang="ts">
-import { useRouter, type RouteLocationRaw } from 'vue-router'
+import { useRouter, type RouteLocationRaw } from 'vue-router';
+import HomePageImage from '@/components/HomePageImage.vue';
+
+
 const router = useRouter(); 
 const goToPage = (page: RouteLocationRaw) => {
   router.push(page);
 }
+
+const scrollDown = () => {
+  console.log("works")
+  const homeElement = document.getElementById("home")
+  if (homeElement) {
+    const scrollOptions = {
+          behavior: 'smooth', // Enable smooth scrolling behavior
+          block: 'start', // Scroll to the top of the element
+          inline: 'start',
+    };
+    homeElement.scrollIntoView(scrollOptions)  //It works so idc that it is red :) 
+  }
+}
+
+
 </script>
 <template>
-  <div class="image-container">
-    <img src="https://www.networkrail.co.uk/wp-content/uploads/2021/04/research-and-development-portfolio-header.jpg" alt="Homepage Photo">
-    <div class="banner">
-      <h1 class="img-text">Investing in tomorrow's innovations today</h1>
-    </div>  
-  </div>
-  
+  <HomePageImage/>
   <!-- <div class="home">
     <h1>Welcome to Venture Capital</h1>
     <p>We provide funding and support to innovative startups.</p>
@@ -58,15 +70,18 @@ const goToPage = (page: RouteLocationRaw) => {
     </ul>
     <router-link to="/services" class="btn btn-tertiary">Learn More About Our Services</router-link>
   </div> -->
-  <div class="home">
+  <div class="find-more-banner">
+      <div @click="scrollDown">See More</div>
+  </div>
+  <div id="home" class="home">
     <h1>Welcome to Genesis Capital</h1>
     <p>Welcome to Venture Capital, where we are passionate about supporting visionary entrepreneurs with game-changing ideas. Our mission is to help turn your bold ideas into successful businesses by providing the capital, resources, and expertise you need to grow.
 </p>
   </div>
   <div class="section">
-    <div class="image-wrapper">
+    <div class="image-wrapper" >
       <img src="https://imageio.forbes.com/specials-images/imageserve/60cf26d139bf3c0abaef3cdc/Multiracial-business-group-in-office/960x0.jpg?format=jpg&width=960" alt="Employees Photo">
-    </div>
+       </div>
     <div class="content">
       <p>At Venture Capital, we specialize in identifying and investing in early-stage startups with the potential for significant growth. Our experienced team of investors has a proven track record of success and is committed to helping you achieve your goals.</p>
       <button @click="goToPage('/employees')">Learn More</button>
@@ -92,88 +107,19 @@ const goToPage = (page: RouteLocationRaw) => {
 
 <style>
   .home {
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     padding: 8rem;
   }
 
-  .image-container {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* Maintain a 16:9 aspect ratio (change this value as needed) */
-    position: relative;
-  }
-  .banner {
-    position: relative;
-    top: 40vh;
-    left: 0;
-    width: 60%;
+  .find-more-banner {
+    position: sticky;
     background-color: rgba(31, 31, 31, 0.5);
-    padding: 3rem;
+    bottom: 0;
+    padding: 0.1rem;
     color: #fff;
-    font-size: 4vh;
+    text-align: center;
   }
-
-  .img-text {
-    position: relative;
-
-  }
-
-  .img-text img {
-    display: block;
-  width: 100%;
-  height: auto;
-  }
-
-  .image-container img {
-    position: absolute;
-    top:0;
-    left: 0; 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  @media screen and (max-width: 1024px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    width: 80%; /* Make the banner wider */
-    font-size: 20px; /* Decrease the font size */
-  }
-  }
-  @media screen and (max-width: 768px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    width: 100%; /* Make the banner wider */
-    font-size: 16px; /* Decrease the font size */
-  }
-}
-  @media screen and (max-width: 620px) {
-    .image-container {
-    padding-bottom: 75%; /* Change the aspect ratio to 4:3 */
-    padding-top: 2rem; /* Add some padding to the top */
-  }
-  .banner {
-    font-size: 10px; /* Decrease the font size */
-    top: 10vh;
-  }
-} 
-
-
-
-
-  
 
 
   .section {
@@ -190,7 +136,6 @@ const goToPage = (page: RouteLocationRaw) => {
 
   .image-wrapper img {
     width: 100%;
-    /* max-height: 300px; */
     border-radius: 50px;
   }
 
