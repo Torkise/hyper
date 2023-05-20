@@ -6,7 +6,7 @@
     <p class="page-text">Our company is proud to have a team of highly skilled and experienced professionals. Each of our employees brings unique expertise and perspectives to the table, allowing us to provide the best possible service to our clients. Get to know our team members below:</p>
     <div class="employees-list">
       <div v-for="(employee, index) in employees" :key="index">
-        <div class="employee-card" @click="showPopup(employee)">
+        <div class="employee-card" @click="goToemployeePage(employee.id)">
           <img class="employee-img" :src="employee.photo">
           <h2>{{ employee.name }}</h2>
           <h3>{{ employee.title }}</h3>
