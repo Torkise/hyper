@@ -1,5 +1,5 @@
 import express from "express"
-import { DataTypes, Sequelize } from 'sequelize'
+import { DataTypes, Sequelize, Op} from 'sequelize'
 import cors from "cors"
 
 import { fileURLToPath } from "url"
@@ -161,26 +161,36 @@ async function initServer() {
         res.status(200).json(data)
     })
 
+    app.get('/projects/area=:areaId', async (req, res) => {
+        try {
+            const area = await models.Area.findOne({
+                where: {
+                    id: req.params.areaId 
+                }
+            })
+        const data = await models.Project.findAll({
+        where: {
+            areas: {
+                [Op.substring]: area.name,
+              },
+        }
+        });
+        res.status(200).json(data);
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+      res.status(500).json({ error: 'Failed to fetch projects' });
+    }
+  });
+
     app.get('/areas', async(req, res) => {
         const data = await models.Area.findAll();
         res.status(200).json(data)
     })
 
-    app.get('/areasId', async(req, res) => { 
-        const data = await models.Area.findAll(); 
-        const result = {}
-        let counter = 0 
-        data.forEach(item => {
-            result[counter] = item.id;
-            counter = counter + 1; 
-        });
-        res.status(200).json(result)
-    })
-
-    app.get('/areas/:id', async(req, res) => {
+    app.get('/areas/area=:areaId', async(req, res) => {
         const data = await models.Area.findOne({
             where: {
-                id: req.params.id 
+                id: req.params.areaId 
             }
         })
         if (data) {
