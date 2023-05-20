@@ -25,7 +25,6 @@ export default {
     data() {
       return {
         featuredProjects: [],
-
       }
     },
     mounted() {
@@ -63,6 +62,7 @@ export default {
         }
       },
       goToProjectPage(id) {
+        window.scrollTo(0, 0)
         router.push("/projects/" + id)
       }
     }

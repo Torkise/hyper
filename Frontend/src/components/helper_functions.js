@@ -17,13 +17,16 @@ export function parseArray(input) {
   }
 
 export function goToProjectPage(id) {
+    window.scroll(0, 0)
     router.push("/projects/" + id)
   }
 
 export function goToEmployeePage(id) {
+    window.scroll(0, 0)
     router.push("/employees/" + id)
   }
 
 export function goToAreaPage(id) {
+    window.scroll(0, 0)
     router.push("/areas/" + id)
   }

@@ -58,6 +58,7 @@ import router from '@/router';
                 });
             },
             goToEmployeePage(employeeId) {
+                window.scrollTo(0, 0)
                 router.push("/employees/" + employeeId)
             },
             parseArray(input) {

@@ -59,6 +59,7 @@ import router from '@/router';
             });
         },
             goToProject(projectId) {
+                window.scroll(0, 0)
                 router.push("/projects/" + projectId)
         },
     }
