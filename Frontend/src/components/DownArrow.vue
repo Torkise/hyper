@@ -1,5 +1,5 @@
 <template>
-    <div class="button">
+    <div class="button-arrow">
         <i class="fas fa-arrow-down">&#129055;</i>
     </div>
 </template>
@@ -9,3 +9,8 @@ export default {
 }
 </script>
 
+<style>
+.button-arrow {
+    cursor: pointer;
+}
+</style>

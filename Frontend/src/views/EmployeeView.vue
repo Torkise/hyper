@@ -47,7 +47,7 @@
             });
         },
             fetchProjects(supervisorId) {
-                const apiUrl = 'http://localhost:3001/projects/supervisor=' + supervisorId ;
+                const apiUrl = 'http://localhost:3001/project/supervisor=' + supervisorId ;
                 console.log("fetching projects")
                 fetch(apiUrl)
                     .then((response) => response.json())

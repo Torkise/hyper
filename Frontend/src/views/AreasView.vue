@@ -1,4 +1,6 @@
+
 <script src="../components/AreaInfo.js"></script>
+
 <template>
   <div class="areas">
     <nav class="menu">

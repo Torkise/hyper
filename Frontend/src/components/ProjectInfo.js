@@ -1,3 +1,5 @@
+import router from "@/router";
+
 export default {
     data() {
       return {
@@ -82,6 +84,10 @@ export default {
         },
         findEmployeeById(id) {
             return this.employees.find(employee => employee.id === id);
+        },
+
+        goToProject(projectId) {
+          router.push("/projects/" + projectId)
         },
         goToemployeePage(id) {
           router.push("/employees/" + id)
