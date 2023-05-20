@@ -1,4 +1,5 @@
-import { goToProjectPage, fetchEmployees, fetchProjects } from './helper_functions.js';
+import { goToProjectPage } from './helper_functions.js';
+import { fetchEmployees, fetchProjects } from './api_functions.js';
 
 export default {
     data() {
@@ -12,7 +13,7 @@ export default {
         featuredProjects() {
             return this.projects.filter((project) => project.featured);
         },
-        projectAreas(projects) {
+        projectAreas() {
           const areas = new Set();
           projects.forEach((project) => {
             project.areas.forEach((area) => areas.add(area));
