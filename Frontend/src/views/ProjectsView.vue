@@ -1,25 +1,34 @@
-<script src="../components/ProjectInfo.js"></script>
+<script>
+import { goToProjectPage } from '../components/helper_functions.js';
+import { fetchProjects } from '../components/api_functions.js';
+
+export default {
+  data() {
+    return {
+      projects: [],
+    };
+  },
+  methods: {
+    goToProjectPage,
+  },
+  async mounted() {
+    this.projects = await fetchProjects();
+  },
+};
+</script>
+
 <template>
   <div class="projects">
     <h1 class="page-title">A Look into Our Investments</h1>
     <p>Welcome to Genesis Capital Projects page, where you can discover the latest investment opportunities and innovative startups we are backing. Our team of experienced professionals is dedicated to identifying and supporting the most promising ventures across a variety of sectors. Explore our portfolio and learn more about the exciting new companies we are supporting.</p>
-    <div>
-      <label for="area-select">Filter by project area: </label>
-      <select id="area-select" v-model="selectedArea">
-        <option value="">All</option>
-        <!-- <option v-for="area in projectAreas()" :value="area" >{{ area }}</option> -->
-      </select>
-    </div>
-    <br>
     <div class="project-list">
-      <div v-for="project in filteredProjects" :key="project.id">
+      <div v-for="project in projects" :key="project.id">
         <div class="project" @click="goToProjectPage(project.id)">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
             {{ area }}
           </div>
           <h2>{{ project.title }}</h2>
           <p>{{ project.shortDescription }}</p>
-          <!-- <button @click="showPopup(project)">Learn More</button> -->
           <p class="learnmore">Learn more...</p>
         </div>
       </div>
@@ -57,33 +66,6 @@
     cursor: pointer;
   }
 
-  .project-popup-content h2 {
-    font-size: 24px;
-    color: #404040;
-  }
-
-  .project-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    padding: 2rem;
-    width: 80%;
-    max-height: 80%;
-    overflow: hidden;
-  }
-  
-  
-  .employee-img-popup{
-    width: 10vh;
-    border-radius: 50%;
-    margin-right: 2rem;
-  }
-
   .project-area {
     display: inline-block;
     margin-right: 0.5rem;
@@ -118,36 +100,10 @@
   .project p {
     font-size: 1rem;
   }
-  
-  .project button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    border: 0;
-    background-color: #6e6e6e;
-    color: #fff;
-    cursor: pointer;
-  }
 
   .learnmore {
     margin-top: 1rem;
     margin-left: 0.5rem;
     color: #979797;
   }
-  
-  .project button:hover {
-    background-color: #979797;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-
-  
-
 </style>
