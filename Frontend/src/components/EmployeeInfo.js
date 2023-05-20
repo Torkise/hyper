@@ -1,5 +1,4 @@
 import router from "@/router";
-import { RouterLink } from "vue-router";
 
 export default {
   data() {
@@ -35,7 +34,6 @@ export default {
     },
     goToemployeePage(id) {
       router.push("/employees/" + id)
-
     }
   }
 }

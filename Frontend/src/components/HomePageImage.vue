@@ -30,12 +30,9 @@ export default {
     methods: {
         startImageRotation() {
             setInterval(() => { 
-                console.log("Update")
-                console.log(this.currentImage)
-                console.log(this.currentIndex)
                 this.currentIndex = (this.currentIndex + 1) % this.images.length
                 this.currentImage = this.images[this.currentIndex]
-            }, 6000)
+            }, 10000)
         }
     }
 }

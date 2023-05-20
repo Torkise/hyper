@@ -6,7 +6,7 @@
       <label for="area-select">Filter by project area: </label>
       <select id="area-select" v-model="selectedArea">
         <option value="">All</option>
-        <option v-for="area in projectAreas" :value="area">{{ area }}</option>
+        <option v-for="area in projectAreas" :value="area" >{{ area }}</option>
       </select>
     </div>
     <br>
