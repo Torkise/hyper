@@ -50,11 +50,6 @@ async function initDB() {
             type: DataTypes.STRING,
             allowNull: true
         },
-        project: {
-            type: DataTypes.ARRAY(DataTypes.INTEGER),
-            allowNull: true,
-            // Kan dnne være null? Skal det være en liste med prossjekter? 
-        }
     })
     
     models.Area = db.define('area', {
