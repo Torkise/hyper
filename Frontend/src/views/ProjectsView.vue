@@ -12,7 +12,7 @@
     <br>
     <div class="project-list">
       <div v-for="project in filteredProjects" :key="project.id">
-        <div class="project" @click="showPopup(project)">
+        <div class="project" @click="goToProject(project.id)">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
             {{ area }}
           </div>

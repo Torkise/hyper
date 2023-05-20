@@ -132,6 +132,14 @@ async function initServer() {
         res.status(200).json(data)
     })
 
+    app.get('/employee/:id', async(req, res) => {
+        const projectId = req.params.id;
+        const project = await models.Project.findByPk(projectId)
+        const employeeId = project.supervisor
+        const employee = await models.Employee.findByPk(employeeId)
+        res.status(200).json(employee)
+    })
+
     app.get('/employees/:id', async(req, res) => {
         const data = await models.Employee.findOne({
             where: {
@@ -146,10 +154,42 @@ async function initServer() {
         }
     })
 
+
     app.get('/projects', async(req, res) => {
         const data = await models.Project.findAll();
         res.status(200).json(data)
     })
+    
+    app.get('/project/:id', async(req, res) => {
+        const data = await models.Project.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        if (data) {
+            res.status(200).json(data)
+        }
+        else {
+            res.sendStatus(404)
+        }
+    })
+
+    app.get('/projects/supervisor=:employeeId', async(req, res) => {
+        const supervisorId = req.params.employeeId
+        const data = await models.Project.findAll({
+            where: {
+                supervisor: supervisorId
+            }
+        }); 
+        if (data) {
+           res.status(200).json(data)
+        }
+        else {
+            res.sendStatus(404)
+        }
+    })
+
+
 
     app.get('/areas', async(req, res) => {
         const data = await models.Area.findAll();

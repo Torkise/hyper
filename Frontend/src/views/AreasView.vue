@@ -1,3 +1,4 @@
+
 <template>
   <div class="areas">
     <nav class="menu">

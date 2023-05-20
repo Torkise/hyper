@@ -70,7 +70,7 @@ const scrollDown = () => {
     <router-link to="/services" class="btn btn-tertiary">Learn More About Our Services</router-link>
   </div> -->
   <div class="find-more-banner">
-      <div @click="scrollDown"><DownArrow></DownArrow></div>
+      <div typeof="button" @click="scrollDown"><DownArrow></DownArrow></div>
   </div>
   <div id="home" class="home">
     <h1>Welcome to Genesis Capital</h1>
