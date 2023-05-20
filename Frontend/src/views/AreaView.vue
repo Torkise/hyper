@@ -80,7 +80,7 @@
         }
       },
         goToProjectPage(id) {
-          router.push("/project/" + id)
+          router.push("/projects/" + id)
         }
     }
 }
