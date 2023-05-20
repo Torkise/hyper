@@ -4,7 +4,7 @@
     <p class="page-text">Discover our carefully selected projects that showcase innovation, excellence, and impactful solutions. These featured projects highlight the diverse range of industries and technologies we invest in, providing insights into our commitment to supporting groundbreaking ventures.</p>
 
     <div class="project-list">
-      <div v-for="project in featuredProjects" :key="project.id">
+      <div v-for="project in this.featuredProjects" :key="project.id">
         <div class="featured-project" @click="goToProjectPage(project.id)">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
             {{ area }}
@@ -24,55 +24,23 @@ import router from "@/router";
 export default {
     data() {
       return {
-        projects: [],
+        featuredProjects: [],
 
       }
     },
     mounted() {
-      this.fetchEmployees();
-      this.fetchProjects();
+      this.fetchFeaturedProjects();
     },
-    computed: {
-        projectAreas() {
-          const areas = new Set();
-          this.projects.forEach((project) => {
-            project.areas.forEach((area) => areas.add(area));
-          });
-          return Array.from(areas);
-        },
-        filteredProjects() {
-          if (!this.selectedArea) {
-            return this.projects;
-          }
-          return this.projects.filter((project) => project.areas.includes(this.selectedArea));
-        },
-        featuredProjects() {
-            return this.projects.filter((project) => project.featured);
-        },
-      },
     methods: {
-      fetchEmployees() {
-        const apiUrl = 'http://localhost:3001/employees';
+      fetchFeaturedProjects() {
+        const apiUrl = 'http://localhost:3001/projects/featured';
   
         fetch(apiUrl)
           .then((response) => response.json())
           .then((data) => {
-            this.employees = data;
-            console.log(this.employees)
-          })
-          .catch((error) => {
-            console.error('Error fetching employee data:', error);
-          });
-      },
-      fetchProjects() {
-        const apiUrl = 'http://localhost:3001/projects';
-  
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            this.projects = data;
-            this.projects.forEach(project => project.areas = this.parseArray(project.areas))
-            console.log(this.projects)
+            this.featuredProjects = data;
+            this.featuredProjects.forEach(project => project.areas = this.parseArray(project.areas))
+            console.log(this.featuredProjects)
           })
           .catch((error) => {
             console.error('Error fetching employee data:', error);
