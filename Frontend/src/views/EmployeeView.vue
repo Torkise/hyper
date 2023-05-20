@@ -67,6 +67,7 @@ import router from '@/router';
 
 <style>
 .home-emp {
+    padding: 8rem;
     width: 100vw;
 }
 
@@ -84,6 +85,7 @@ import router from '@/router';
   background-color: #fff;
   border-radius: 5px;
   width: 100%;
+  height: 100vh;
   max-height: 100%;
   margin-left: 2rem;
   /* overflow-y: scroll; */
