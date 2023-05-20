@@ -30,6 +30,7 @@ const scrollToTop = (urlEnd: string) => {
     <div class="wrapper">
       <nav>
         <RouterLink to="/" @click="scrollToTop('')">Home</RouterLink>
+        <RouterLink to="/featured" @click="scrollToTop('featured')">Featured Projects</RouterLink>
         <RouterLink to="/projects" @click="scrollToTop('projects')">Projects</RouterLink>
         <RouterLink to="/areas" @click="scrollToTop('areas')">Areas</RouterLink>
         <RouterLink to="/employees" @click="scrollToTop('employees')">Employees</RouterLink>
