@@ -95,6 +95,7 @@
     margin-top: 1rem;
     margin-left: 0.5rem;
     color: #979797;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 800px) {
