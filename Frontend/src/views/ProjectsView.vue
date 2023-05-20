@@ -1,3 +1,4 @@
+<script src="../components/ProjectInfo.js"></script>
 <template>
   <div class="projects">
     <h1 class="page-title">A Look into Our Investments</h1>
@@ -6,13 +7,13 @@
       <label for="area-select">Filter by project area: </label>
       <select id="area-select" v-model="selectedArea">
         <option value="">All</option>
-        <option v-for="area in projectAreas" :value="area" >{{ area }}</option>
+        <option v-for="area in projectAreas(projects)" :value="area" >{{ area }}</option>
       </select>
     </div>
     <br>
     <div class="project-list">
       <div v-for="project in filteredProjects" :key="project.id">
-        <div class="project" @click="goToProject(project.id)">
+        <div class="project" @click="goToProjectPage(project.id)">
           <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
             {{ area }}
           </div>
@@ -21,24 +22,10 @@
           <!-- <button @click="showPopup(project)">Learn More</button> -->
           <p class="learnmore">Learn more...</p>
         </div>
-        <div v-if="project.showPopup" class="overlay" @click="hidePopup(project)"></div>
-        <div v-if="project.showPopup" class="project-popup">
-          <div class="project-popup-content">
-            <div class="project-area" :class="area.toLowerCase()" v-for="area in project.areas" :key="area">
-              {{ area }}
-            </div>
-            <h2>{{ project.title }}</h2>
-            <p v-html="project.longDescription"></p>
-            <br>
-            <img class="employee-img-popup" :src="findEmployeeById(project.supervisor).photo">
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </template>
-
-<script src="../components/ProjectInfo.js"></script>
 
 <style>
   .projects {
