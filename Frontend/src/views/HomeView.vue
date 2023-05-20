@@ -9,7 +9,6 @@ const goToPage = (page: RouteLocationRaw) => {
 }
 
 const scrollDown = () => {
-  console.log("works")
   const homeElement = document.getElementById("home")
   if (homeElement) {
     const scrollOptions = {
