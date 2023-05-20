@@ -34,7 +34,7 @@ export default {
       return this.employees.find(employee => employee.id === id);
     },
     goToemployeePage(id) {
-      router.push("/employees/employee/" + id)
+      router.push("/employees/" + id)
 
     }
   }
