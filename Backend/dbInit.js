@@ -142,12 +142,11 @@ export default async (models) => {
             featured: false,
           },
     ]
-
     const areaModel = [
       {
         id: 1,
-        name: "Artificial Intelligence",
-        description: "AI is transforming the way we live and work, and its potential applications are vast. AI technologies such as machine learning, natural language processing, and computer vision are already being used in a variety of industries, from healthcare to finance to retail. Companies working on developing or implementing AI-based solutions could be excellent investment opportunities."
+        name: "Technology",
+        description: "Technology is transforming the way we live and work, and its potential applications are vast. Technologies such as artificial intelligence, machine learning, and blockchain are revolutionizing various industries, from healthcare to finance to retail. Companies working on innovative technological solutions could be excellent investment opportunities."
       },
       {
         id: 2,
@@ -158,8 +157,14 @@ export default async (models) => {
         id: 3,
         name: "Healthcare",
         description: "The healthcare industry is ripe for innovation, and there are many areas where investment could make a significant impact. Companies focused on developing new drugs or medical devices, improving healthcare IT systems, or providing more accessible and affordable healthcare solutions could be promising investment opportunities."
+      },
+      {
+        id: 4,
+        name: "Sustainability",
+        description: "Sustainability is a growing concern worldwide, and businesses are seeking to adopt more environmentally friendly practices. Investments in companies focused on sustainable solutions, such as renewable energy, eco-friendly products, waste management, or sustainable agriculture, could contribute to a greener future and offer potential returns."
       }
     ];
+    
     // const location0 = await models.Location.create(locationModel[0])
     // const location1 = await models.Location.create(locationModel[1])
 
