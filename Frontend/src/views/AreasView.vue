@@ -1,5 +1,23 @@
+<script>
+import { goToAreaPage } from '../components/helper_functions.js';
+import { fetchProjects, fetchAreas } from '../components/api_functions.js';
 
-<script src="../components/AreaInfo.js"></script>
+export default {
+  data() {
+    return {
+      areas: [],
+      projects: [],
+      };
+  },
+  methods: {
+    goToAreaPage
+  },
+  async mounted() {
+    this.areas = await fetchAreas();
+    this.projects = await fetchProjects();
+  }
+}
+</script>
 
 <template>
   <div class="areas">

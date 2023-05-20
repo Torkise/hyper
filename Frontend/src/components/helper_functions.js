@@ -23,3 +23,7 @@ export function goToProjectPage(id) {
 export function goToEmployeePage(id) {
     router.push("/employees/" + id)
   }
+
+export function goToAreaPage(id) {
+    router.push("/areas/" + id)
+  }

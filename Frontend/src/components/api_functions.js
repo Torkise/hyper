@@ -32,3 +32,19 @@ export function fetchEmployees() {
       throw error;
     });
 }
+
+export function fetchAreas() {
+  const apiUrl = 'http://localhost:3001/areas';
+
+  return fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const areas = data;
+      console.log(areas);
+      return areas;
+    })
+    .catch((error) => {
+      console.error('Error fetching area data:', error);
+      throw error;
+    });
+}
