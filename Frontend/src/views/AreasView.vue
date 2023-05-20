@@ -1,4 +1,6 @@
 
+<script src="../components/AreaInfo.js"></script>
+
 <template>
   <div class="areas">
     <nav class="menu">
@@ -21,29 +23,19 @@
     </nav>
     <h1 class="page-title">Our Fields of Interest</h1>
     <section id="general" class="area-section">
-      <!-- Content for Section 1 -->
       <p>In Genesis Capital, we are committed to investing in innovative and high-growth potential startups that are poised to make a significant impact in their respective industries. On this page, we provide an overview of the areas in which we invest and the types of businesses we are looking to support. Whether you are an entrepreneur seeking funding for your startup or an investor interested in learning more about our investment strategy, we hope this page provides valuable insights into our focus and approach.</p>
     </section>
 
-    <section id="energy" class="area-section">
-      <!-- Content for Section 2 -->
-      <h2 class="page-title">Energy</h2>
-    </section>
+    <div v-for="area in areas" :key="area.id">
+      <section :id="area.name.toLowerCase()" class="area-section">
+        <!-- Content for Section -->
+        <h2 class="page-title">{{area.name}}</h2>
+        <p>{{ area.description }}</p>
+        <div @click="goToAreaPage(area.id)"><p class="learnmore">Learn more..</p></div>
+      </section>
+    </div>
 
-    <section id="sustainability" class="area-section">
-      <!-- Content for Section 3 -->
-      <h2 class="page-title">Sustainability</h2>
-    </section>
 
-    <section id="technology" class="area-section">
-      <!-- Content for Section 4 -->
-      <h2 class="page-title">Technology</h2>
-    </section>
-
-    <section id="healthcare" class="area-section">
-      <!-- Content for Section 5 -->
-      <h2 class="page-title">Healthcare</h2>
-    </section>
   </div>
 </template>
 
@@ -99,6 +91,13 @@
 
   .menu span {
     margin-left: 0.5rem;
+  }
+
+  .learnmore {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    color: #979797;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 800px) {
