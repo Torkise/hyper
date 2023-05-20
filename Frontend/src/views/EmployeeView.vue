@@ -1,14 +1,14 @@
 <template>
     <div class="home-emp">
-        <div class="employee">
+        <div class="employee-page">
             <img class="employee-page-img" :src="employee.photo">
             <h2>{{ employee.name }}</h2>
             <h3>{{ employee.title }}</h3>
-            <p v-html="employee.bio" class="employee-bio"></p>
+            <div class="bio">{{ employee.bio }}</div>
             <div class = "project-box">
                 <h1 class="h-proj">Projects</h1>
                 <div v-for="(project, index) in projects" :key="index">
-                    <li>{{ project.title }}</li>
+                    <li @click="goToProject(project.id)">{{ project.title }}</li>
                 </div>
             </div>    
         </div>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import router from '@/router';
+
     export default {
         data () {
             return {
@@ -29,9 +31,6 @@
             this.fetchProjects(this.employeeId);
         },
         methods: {
-            logInfo() {
-                console.log(this.employeeId)
-            },
             fetchEmployees(id) {
                 const apiUrl = 'http://localhost:3001/employees/' + id;
                 console.log("Fetch API")
@@ -59,13 +58,15 @@
                     console.error('Error fetching project data:', error);
             });
         },
+            goToProject(projectId) {
+                router.push("/projects/" + projectId)
+        },
     }
 }
 </script>
 
 <style>
 .home-emp {
-    padding: 8rem;
     width: 100vw;
 }
 
@@ -76,7 +77,7 @@
   border-radius: 25%;
 }
 
-.employee {
+.employee-page {
 
   position: relative;
   display: block    ;
@@ -84,11 +85,12 @@
   border-radius: 5px;
   width: 100%;
   max-height: 100%;
+  margin-left: 2rem;
   /* overflow-y: scroll; */
 }
 
-.employee-bio {
-    width: 75%;
+.employee-page.bio {
+    max-width: 500px
 }
 
 .project-box {
@@ -104,17 +106,13 @@
     opacity: 1;
 }
 
-.projects .h-proj {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.project-box li {
+    cursor: pointer;
 }
 
-.projects li {
-  list-style-type: none;
-  margin-bottom: 5px;
+.project-box li:hover{
+    color: blue;
 }
-
-
 
 
 
