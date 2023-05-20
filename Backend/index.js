@@ -151,6 +151,16 @@ async function initServer() {
         res.status(200).json(data)
     })
 
+    app.get('/projects/supervisor=:employeeId', async(req, res) => {
+        const supervisorId = req.params.employeeId
+        const data = await models.Project.findAll({
+            where: {
+                supervisor: supervisorId
+            }
+        }); 
+        res.status(200).json(data)
+    })
+
     app.get('/areas', async(req, res) => {
         const data = await models.Area.findAll();
         res.status(200).json(data)
