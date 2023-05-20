@@ -8,11 +8,13 @@
         <div class="project-areas" v-for="(value, key) in project.areas" :key="key">
                 {{ value }}
         </div>
-        <h2>Supervisor: {{ employee.name }}</h2>
+        <h2 class="supervisor" @click="goToEmployeePage(employee.id)">Supervisor: {{ employee.name }}</h2>
     </div>
 </template>
 
 <script>
+import router from '@/router';
+
     export default {
         data() {
             return {
@@ -55,6 +57,9 @@
                     console.log('Error fetching employee:', error)
                 });
             },
+            goToEmployeePage(employeeId) {
+                router.push("/employees/" + employeeId)
+            },
             parseArray(input) {
             try {
                 // Remove the surrounding single quotes if present
@@ -89,5 +94,17 @@
 
 }
 
+.project-areas {
+    cursor: pointer;
+}
+
+
+.supervisor {
+    cursor: pointer;
+}
+
+.supervisor:hover {
+    color: blue;
+}
 
 </style>
