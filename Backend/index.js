@@ -230,6 +230,22 @@ async function initServer() {
         res.status(200).json(data)
     })
 
+    app.get('/areas/project/projectid=:projectid', async(req, res) => {
+        const projectId = req.params.projectid;
+        const project = await models.Project.findByPk(projectId)
+        const projectAreas = JSON.parse(project.areas.replace(/'/g, '"'))
+        const data = await models.Area.findAll({
+            where: {
+                [Op.or]: projectAreas.map(area => ({
+                    name: {
+                        [Op.substring]: area
+                    }
+                }))
+            }
+        })
+        res.status(200).json(data)
+    })
+
     app.get('/areas/area=:areaId', async(req, res) => {
         const data = await models.Area.findOne({
             where: {
