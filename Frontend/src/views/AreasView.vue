@@ -21,27 +21,10 @@ export default {
 
 <template>
   <div class="areas">
-    <nav class="menu">
-      <ul>
-        <li><a href="#general"><img src="../assets/icons/general.svg"><span>General</span></a></li>
-        <li><a href="#energy"><img src="../assets/icons/energy.svg"><span>Energy</span></a></li>
-        <li><a href="#sustainability"><img src="../assets/icons/sustainability.svg"><span>Sustainability</span></a></li>
-        <li><a href="#technology"><img src="../assets/icons/technology.svg"><span>Technology</span></a></li>
-        <li><a href="#healthcare"><img src="../assets/icons/healthcare.svg"><span>Healthcare</span></a></li>
-      </ul>
-    </nav>
-    <nav class="menu-phone">
-      <ul>
-        <li><a href="#general"><img src="../assets/icons/general.svg"><span></span></a></li>
-        <li><a href="#energy"><img src="../assets/icons/energy.svg"><span></span></a></li>
-        <li><a href="#sustainability"><img src="../assets/icons/sustainability.svg"><span></span></a></li>
-        <li><a href="#technology"><img src="../assets/icons/technology.svg"><span></span></a></li>
-        <li><a href="#healthcare"><img src="../assets/icons/healthcare.svg"><span></span></a></li>
-      </ul>
-    </nav>
+    
     <h1 class="page-title">Our Fields of Interest</h1>
     <section id="general" class="area-section">
-      <p>In Genesis Capital, we are committed to investing in innovative and high-growth potential startups that are poised to make a significant impact in their respective industries. On this page, we provide an overview of the areas in which we invest and the types of businesses we are looking to support. Whether you are an entrepreneur seeking funding for your startup or an investor interested in learning more about our investment strategy, we hope this page provides valuable insights into our focus and approach.</p>
+      <p></p>
     </section>
 
     <div v-for="area in areas" :key="area.id">
